@@ -149,7 +149,7 @@ export default function Site() {
                 </motion.p>
                 <motion.div variants={fadeUp} className="mt-8 flex flex-col sm:flex-row gap-3">
                     <Magnetic>
-                        <a href="#contact" className="group relative inline-flex items-center justify-center rounded-2xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+                        <a href="/apply" className="group relative inline-flex items-center justify-center rounded-2xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
                             {lang === "en" ? "Get a proposal" : "Санал авахаар холбогдох"}
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                             <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
@@ -339,7 +339,7 @@ function Header({ brand, nav, lang, setLang, currency, setCurrency, dark, setDar
   return (
     <header className={`sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-950/60 border-b border-slate-200/60 dark:border-slate-800/60 transition-shadow ${elevate ? "shadow-md shadow-slate-200/40 dark:shadow-black/20" : ""}`}>
       <div className="mx-auto max-w-7xl px-6 md:px-8 py-4 flex items-center justify-between">
-        <a href="#home" className="font-bold text-lg tracking-tight flex items-center gap-2">
+        <a href="/" className="font-bold text-lg tracking-tight flex items-center gap-2">
           <img src={logo} alt="Logo" className="h-5 w-auto" />
           {brand}
         </a>
@@ -349,7 +349,7 @@ function Header({ brand, nav, lang, setLang, currency, setCurrency, dark, setDar
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-2">
-          <button onClick={() => setLang((p) => (p === "en" ? "MN" : "en"))} className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50 dark:hover:bg-slate-900" aria-label="Toggle language">{lang.toUpperCase()}</button>
+          <button onClick={() => setLang((p) => (p === "en" ? "mn" : "en"))} className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50 dark:hover:bg-slate-900" aria-label="Toggle language">{lang.toUpperCase()}</button>
          </div>
         {/* Mobile */}
         <button className="md:hidden rounded-xl border p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Open menu"><Menu className="h-5 w-5" /></button>
@@ -367,79 +367,79 @@ function Header({ brand, nav, lang, setLang, currency, setCurrency, dark, setDar
           //   </div>
           // </motion.aside>
 
-      <>
-  {/* Overlay */}
-  <motion.div
-    key="overlay"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
-    onClick={() => setMobileOpen(false)}
-  />
-
-  {/* Drawer */}
-  <motion.aside
-    key="drawer"
-    initial={{ x: 320 }}
-    animate={{ x: 0 }}
-    exit={{ x: 320 }}
-    transition={{ type: "spring", stiffness: 220, damping: 30 }}
-    className="
-       fixed right-0 top-0  h-[calc(100vh)] z-[50] w-80
-      border-l border-gray-200 dark:border-white/10
-      bg-white dark:bg-slate-900
-      shadow-lg dark:shadow-black/20
-      rounded-l-lg
-      p-6
-      overflow-y-auto
-    "
-  >
-    <div className="mb-4 flex items-center justify-between">
-      <span className="text-sm font-semibold text-gray-900 dark:text-white/90">
-        Menu
-      </span>
-      <button
-        onClick={() => setMobileOpen(false)}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-300 dark:border-white/10 bg-gray-100 dark:bg-white/5"
-      >
-        <X className="h-5 w-5 text-gray-800 dark:text-white" />
-      </button>
-    </div>
-
-    {/* Links */}
-    <div className="flex flex-col gap-3">
-      {nav.map((n) => (
-        <a
-          key={n.id}
-          href={`#${n.id}`}
+            <>
+        {/* Overlay */}
+        <motion.div
+          key="overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
           onClick={() => setMobileOpen(false)}
+        />
+
+        {/* Drawer */}
+        <motion.aside
+          key="drawer"
+          initial={{ x: 320 }}
+          animate={{ x: 0 }}
+          exit={{ x: 320 }}
+          transition={{ type: "spring", stiffness: 220, damping: 30 }}
           className="
-          rounded-lg px-2 py-2 text-sm text-white/80 transition-all duration-500 hover:bg-white/5 hover:text-white
+            fixed right-0 top-0  h-[calc(100vh)] z-[50] w-80
+            border-l border-gray-200 dark:border-white/10
+            bg-white dark:bg-slate-900
+            shadow-lg dark:shadow-black/20
+            rounded-l-lg
+            p-6
+            overflow-y-auto
           "
         >
-          {lang === "en" ? n.en : n.mn}
-        </a>
-      ))}
+          <div className="mb-4 flex items-center justify-between">
+            <span className="text-sm font-semibold text-gray-900 dark:text-white/90">
+              Menu
+            </span>
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-300 dark:border-white/10 bg-gray-100 dark:bg-white/5"
+            >
+              <X className="h-5 w-5 text-gray-800 dark:text-white" />
+            </button>
+          </div>
 
-      <a
-        href="#cta"
-        onClick={() => setMobileOpen(false)}
-        className="
-          mt-2 inline-flex items-center gap-2 rounded-xl
-          border border-gray-300 dark:border-white/10
-          bg-black dark:bg-white
-          px-4 py-2 text-sm font-medium
-          text-white dark:text-black
-          transition-all duration-300
-          hover:shadow-xl
-        "
-      >
-        Get Proposal <ArrowRight className="h-4 w-4" />
-      </a>
-    </div>
-  </motion.aside>
-</>
+          {/* Links */}
+          <div className="flex flex-col gap-3">
+            {nav.map((n) => (
+              <a
+                key={n.id}
+                href={`#${n.id}`}
+                onClick={() => setMobileOpen(false)}
+                className="
+                rounded-lg px-2 py-2 text-sm text-white/80 transition-all duration-500 hover:bg-white/5 hover:text-white
+                "
+              >
+                {lang === "en" ? n.en : n.mn}
+              </a>
+            ))}
+
+            <a
+              href="/apply"
+              onClick={() => setMobileOpen(false)}
+              className="
+                mt-2 inline-flex items-center gap-2 rounded-xl
+                border border-gray-300 dark:border-white/10
+                bg-black dark:bg-white
+                px-4 py-2 text-sm font-medium
+                text-white dark:text-black
+                transition-all duration-300
+                hover:shadow-xl
+              "
+            >
+              Get Proposal <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </motion.aside>
+      </>
 
         )}
       </AnimatePresence>

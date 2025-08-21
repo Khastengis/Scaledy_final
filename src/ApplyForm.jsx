@@ -4,6 +4,7 @@ import { Widget } from "@typeform/embed-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Mail, Phone, MapPin } from "lucide-react";
 import logo from "./assets/logo.png";
+import { Link } from "react-router-dom";
 
 // ---- Background: Starfield & Meteors (copied from Site) ----
 function Starfield({ count = 95, className = "" }) {
@@ -87,58 +88,19 @@ function GlobalBackground() {
     </div>
   );
 }
-
-// ---- Header (same look & behavior) ----
-function Header({ brand, nav, lang, setLang, currency, setCurrency, dark, setDark, mobileOpen, setMobileOpen }) {
+function Header({ brand }) {
   return (
-    <header className={`sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-950/60 border-b border-slate-200/60 dark:border-slate-800/60`}>
-      <div className="mx-auto max-w-7xl px-6 md:px-8 py-3 flex items-center justify-between">
-        <a href="/" className="font-bold text-lg tracking-tight flex items-center gap-2">
-          <img src={logo} alt="Logo" className="h-5 w-auto" />
+    <header className="sticky top-0 z-[60] backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-950/60 border-b border-slate-200/60 dark:border-slate-800/60">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 py-4 flex items-center">
+        <Link
+          to="/"
+          aria-label="Go to home"
+          className="font-bold text-lg tracking-tight flex items-center gap-2"
+        >
+          <img src={logo} alt={`${brand} logo`} className="h-5 w-auto" />
           {brand}
-        </a>
-        <nav className="hidden md:flex gap-6 text-sm">
-          {nav.map((n) => (
-            <a key={n.id} href={`/#${n.id}`} className="hover:opacity-80">
-              {lang === "en" ? n.en : n.mn}
-            </a>
-          ))}
-        </nav>
-        <div className="hidden md:flex items-center gap-2">
-          <button onClick={() => setLang((p) => (p === "en" ? "mn" : "en"))} className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50 dark:hover:bg-slate-900" aria-label="Toggle language">
-            {lang.toUpperCase()}
-          </button>
-          <button onClick={() => setCurrency((p) => (p === "MNT" ? "USD" : "MNT"))} className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50 dark:hover:bg-slate-900" aria-label="Toggle currency">
-            {currency}
-          </button>
-
-        </div>
-        <button className="md:hidden rounded-xl border p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Open menu">
-          <Menu className="h-5 w-5" />
-        </button>
+        </Link>
       </div>
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="md:hidden border-t overflow-hidden">
-            <div className="px-4 py-3 flex flex-col gap-3">
-              {nav.map((n) => (
-                <a key={n.id} href={`/#${n.id}`} onClick={() => setMobileOpen(false)} className="py-1">
-                  {lang === "en" ? n.en : n.mn}
-                </a>
-              ))}
-              <div className="flex items-center gap-2 pt-2">
-                <button onClick={() => setLang((p) => (p === "en" ? "mn" : "en"))} className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs" aria-label="Toggle language">
-                  {lang.toUpperCase()}
-                </button>
-                <button onClick={() => setCurrency((p) => (p === "MNT" ? "USD" : "MNT"))} className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs" aria-label="Toggle currency">
-                  {currency}
-                </button>
-
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
   );
 }
@@ -192,65 +154,24 @@ export default function ApplyForm() {
 
         {/* Content wrapper */}
         <div className="relative z-10">
-          <Header
-            brand={brand}
-            nav={nav}
-            lang={lang}
-            setLang={setLang}
-            currency={currency}
-            setCurrency={setCurrency}
-            dark={dark}
-            setDark={setDark}
-            mobileOpen={mobileOpen}
-            setMobileOpen={setMobileOpen}
-          />
+          <Header brand="Scaledy" />
 
           {/* Typeform content */}
           <main className="mx-auto max-w-5xl px-6 md:px-8 py-10">
-            <h1 className="text-2xl md:text-3xl font-bold mb-4">
-              {lang === "en" ? "Apply to work with us" : "Хамтран ажиллах хүсэлт"}
-            </h1>
-
-            <div className="rounded-2xl border bg-white/70 dark:bg-slate-900/40 backdrop-blur p-3 md:p-4">
-              <div className="w-full h-[78vh]">
-                <Widget
-                  id="KbaFkFON"
-                  style={{ width: "100%", height: "100%" }}
-                  autoFocus
-                  hidden={{ source: "website" }}
-                  onSubmit={() => {
-                    window.location.href = "/thanks";
-                  }}
-                />
+            <div className="glow-card">
+              <div className="glow-card__inner rounded-2xl bg-white/70 dark:bg-slate-900/40 backdrop-blur shadow-lg dark:shadow-black/20 overflow-hidden">
+                <div className="w-full h-[78vh]">
+                  <Widget
+                    id="KbaFkFON"
+                    style={{ width: "100%", height: "100%" }}
+                    autoFocus
+                    hidden={{ source: "website" }}
+                   
+                  />
+                </div>
               </div>
             </div>
-
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-3">
-              {lang === "en"
-                ? "Having trouble loading the form? "
-                : "Форм ачааллахгүй байна уу? "}
-              <a className="underline" href="https://form.typeform.com/to/KbaFkFON" target="_blank" rel="noreferrer">
-                Open it in a new tab
-              </a>
-              .
-            </p>
           </main>
-
-          {/* Footer (copied to match your Site) */}
-          <footer className="border-t border-slate-200 dark:border-slate-800">
-            <div className="mx-auto max-w-7xl px-6 md:px-8 py-10 text-sm flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
-              <div className="opacity-80">
-                © {new Date().getFullYear()} {brand}. {lang === "en" ? "All rights reserved." : "Бүх эрх хуулиар хамгаалагдсан."}
-              </div>
-              <div className="flex items-center gap-6 md:gap-8 opacity-80">
-                {nav.map((n) => (
-                  <a key={n.id} href={`/#${n.id}`} className="hover:opacity-100">
-                    {lang === "en" ? n.en : n.mn}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </footer>
         </div>
       </div>
     </div>

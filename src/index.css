@@ -2,3 +2,62 @@
 
 /* marquee keyframes used in the page */
 @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+
+/* GitHub-like animated glow border */
+.glow-card {
+  position: relative;
+  border-radius: 16px;            /* match your rounded-2xl */
+  isolation: isolate;             /* keep the glow inside this stacking context */
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -2px;                    /* slightly outside to peek around the edges */
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--glow-angle, 0deg),
+    #6e40ff,   /* purple */
+    #00e5ff,   /* cyan */
+    #6e40ff
+  );
+  filter: blur(12px);             /* the “glow” */
+  opacity: 0.8;
+  animation: glow-rotate 6s linear infinite;
+  pointer-events: none;
+}
+
+/* A subtle real border line on top of the glow */
+.glow-card::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,0.15);    /* tweak for light mode below if you want */
+  /* If you want light mode darker border:
+     border: 1px solid rgba(0,0,0,0.08);
+  */
+  pointer-events: none;
+}
+
+/* Inner content sits above the pseudo elements */
+.glow-card__inner {
+  position: relative;
+  z-index: 2;
+  border-radius: inherit;
+  /* Your existing glass/background styles can go here, or in JSX via className */
+}
+
+/* Animate the conic gradient */
+@keyframes glow-rotate {
+  to { --glow-angle: 360deg; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .glow-card::before {
+    animation: none;
+  }
+}
