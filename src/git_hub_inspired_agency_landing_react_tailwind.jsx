@@ -213,7 +213,6 @@ function Navbar() {
       <AnimatePresence>
         {open && (
           <>
-            {/* overlay */}
             <motion.div
               key="overlay"
               initial={{ opacity: 0 }}
@@ -222,39 +221,20 @@ function Navbar() {
               className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
               onClick={() => setOpen(false)}
             />
-
-            {/* drawer */}
             <motion.aside
               key="drawer"
               initial={{ x: 320 }}
               animate={{ x: 0 }}
               exit={{ x: 320 }}
               transition={{ type: "spring", stiffness: 220, damping: 30 }}
-              className="
-                fixed right-0 top-0 z-50 h-full w-80
-                border-l border-white/10      /* primary border */
-                bg-neutral-950 text-white      /* primary bg + text */
-                p-6 md:hidden
-                /* hard fallbacks if your Tailwind build strips the above: */
-                border-l-[1px] border-l-[rgba(255,255,255,0.12)]
-                bg-[rgb(10,10,10)]
-              "
-              /* final safety net if CSS is overridden elsewhere */
-              style={{
-                borderLeftColor: "rgba(255,255,255,0.12)",
-                backgroundColor: "rgb(10,10,10)",
-              }}
+              className="fixed right-0 top-0 z-50 h-full w-80 border-l border-white/10 bg-neutral-950 p-6"
             >
               <div className="mb-4 flex items-center justify-between">
                 <span className="text-sm font-semibold text-white/90">Menu</span>
-                <button
-                  onClick={() => setOpen(false)}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5"
-                >
+                <button onClick={() => setOpen(false)} className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5">
                   <X className="h-5 w-5" />
                 </button>
               </div>
-
               <div className="flex flex-col gap-3">
                 {links.map((l) => (
                   <a
@@ -266,12 +246,7 @@ function Navbar() {
                     {l.label}
                   </a>
                 ))}
-
-                <a
-                  href="#cta"
-                  onClick={() => setOpen(false)}
-                  className="mt-2 inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white px-4 py-2 text-sm font-medium text-black transition-all duration-500 hover:shadow-xl"
-                >
+                <a href="#cta" onClick={() => setOpen(false)} className="mt-2 inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white px-4 py-2 text-sm font-medium text-black transition-all duration-500 hover:shadow-xl">
                   Get Proposal <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -279,7 +254,6 @@ function Navbar() {
           </>
         )}
       </AnimatePresence>
-
     </div>
   );
 }
