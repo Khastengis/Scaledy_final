@@ -28,7 +28,7 @@ function Starfield({ count = 95, className = "" }) {
       {stars.map((s, i) => (
         <span
           key={i}
-          className="absolute rounded-full bg-white/80 dark:bg-white/90 shadow-[0_0_6px_rgba(255,255,255,.45)]"
+          className="absolute rounded-full bg-white/90 shadow-[0_0_6px_rgba(255,255,255,.45)]"
           style={{
             left: `${s.left}%`,
             top: `${s.top}%`,
@@ -90,7 +90,7 @@ function GlobalBackground() {
 }
 function Header({ brand }) {
   return (
-    <header className="sticky top-0 z-[60] backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-950/60 border-b border-slate-200/60 dark:border-slate-800/60">
+    <header className="sticky top-0 z-[60] supports-[backdrop-filter]:bg-slate-950/60 border-b border-slate-800/60">
       <div className="mx-auto max-w-7xl px-6 md:px-8 py-4 flex items-center">
         <Link
           to="/"
@@ -149,7 +149,7 @@ export default function ApplyForm() {
         @keyframes sheen { 0%{ transform: translateX(-120%)} 100%{ transform: translateX(120%)} }
       `}</style>
 
-      <div className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 relative">
+      <div className="min-h-screen bg-slate-950 text-slate-100 relative">
         <GlobalBackground />
 
         {/* Content wrapper */}
@@ -159,7 +159,7 @@ export default function ApplyForm() {
           {/* Typeform content */}
           <main className="mx-auto max-w-5xl px-6 md:px-8 py-10">
             <div className="glow-card">
-              <div className="glow-card__inner rounded-2xl bg-white/70 dark:bg-slate-900/40 backdrop-blur shadow-lg dark:shadow-black/20 overflow-hidden">
+              <div className="glow-card__inner rounded-2xl bg-white/70 dark:bg-slate-900/40 backdrop-blur shadow-black/20 overflow-hidden">
                 <div className="w-full h-[78vh]">
                   <Widget
                     id="KbaFkFON"
