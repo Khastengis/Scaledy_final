@@ -185,7 +185,7 @@ export default function Site() {
 
   const counters = [
     { key: "brands", end: 120, label: { en: "+ brands supported", mn: "+ брэнд хамтран ажилласан" } },
-    { key: "ad", end: 1000000, label: { en: "$ managed ad/mo*", mn: "$/сар зарын менежмент*" } },
+    { key: "ad", end: 1000000, label: { en: "$ managed ad/mo*", mn: "₮ зарын төсөв/сар*" } },
     { key: "roas", end: 4.8, decimals: 1, label: { en: "avg. ROAS on scale*", mn: "дундаж ROAS*" } },
   ];
 
@@ -268,19 +268,19 @@ export default function Site() {
                     className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs mb-6 backdrop-blur supports-[backdrop-filter]:bg-slate-900/40"
                   >
                     <Sparkles className="h-3.5 w-3.5" />{" "}
-                    {lang === "en" ? "Direct-to-Consumer growth systems" : "D2C өсөлтийн систем"}
+                    {lang === "en" ? "Direct-to-Consumer growth systems" : "Хэрэглэгч рүү чиглэсэн өсөлтийн систем"}
                   </motion.div>
                   <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-400 to-white bg-[length:200%_auto] animate-[floaty_6s_ease-in-out_infinite]">
                       {lang === "en"
                         ? "We build, launch, and scale profitable ad systems."
-                        : "Бид ашигтай зарын систем бүтээж, нэвтрүүлж, тэлдэг."}
+                        : "Бид брэндийг өргөжүүлж, орлогыг нэмэх шийдлийг бий болгодог."}
                     </span>
                   </motion.h1>
                   <motion.p variants={fadeUp} className="mt-5 text-lg text-slate-300 max-w-2xl">
                     {lang === "en"
                       ? "Done-for-you media buying, conversion, and creative for e-commerce & service brands in Mongolia and beyond."
-                      : "Монгол болон гадаадын e-коммерс, үйлчилгээний брэндүүдэд зориулсан медиа худалдан авалт, хөрвүүлэлт, креативын иж бүрэн үйлчилгээ."}
+                      : "Брэндийн өсөлтөд хэрэгтэй бүхнийг нэгтгэн, e-commerce ба үйлчилгээний бизнесийг шинэ түвшинд гаргана."}
                   </motion.p>
                   <motion.div variants={fadeUp} className="mt-8 flex flex-col sm:flex-row gap-3">
                     <Magnetic>
@@ -370,9 +370,9 @@ export default function Site() {
                 </motion.div>
               ))}
             </motion.div>
-            <p className="text-xs text-slate-400 mt-3">
-              {lang === "en" ? "*Placeholders. Replace with your real metrics." : "*Түр тоо. Жинхэнэ үзүүлэлтээр солино уу."}
-            </p>
+            {/* <p className="text-xs text-slate-400 mt-3">
+              {lang === "en" ? "*Placeholders. Replace with your real metrics." : "*Оошоохгуюу."}
+            </p> */}
           </section>
 
           {/* SERVICES */}
@@ -391,33 +391,33 @@ export default function Site() {
               <motion.div variants={fadeUp}>
                 <ServiceCard
                   icon={<BarChart3 className="h-5 w-5" />}
-                  title={lang === "en" ? "Performance Media Buying" : "Гүйцэтгэлд суурилсан медиа"}
+                  title={lang === "en" ? "Performance Media Buying" : "Өсөлт ба гүйцэтгэл"}
                   bullets={
                     lang === "en"
                       ? ["Meta, TikTok, Google", "Offer + audience testing", "Daily optimization"]
-                      : ["Meta, TikTok, Google", "Санал/аудит тест", "Өдөр тутмын оновчлол"]
+                      : ["Meta, TikTok, Google зар", "Бүтээгдэхүүний санал ба зорилтот хэрэглэгчийн тест", "Тасралтгүй оновчлол"]
                   }
                 />
               </motion.div>
               <motion.div variants={fadeUp}>
                 <ServiceCard
                   icon={<Building2 className="h-5 w-5" />}
-                  title={lang === "en" ? "CRO & Landing Pages" : "CRO ба Лэндинг"}
+                  title={lang === "en" ? "CRO & Landing Pages" : "Хөрвүүлэлт ба туршлага"}
                   bullets={
                     lang === "en"
                       ? ["On-page experiments", "A/B testing", "Speed & tracking"]
-                      : ["Хуудас туршилт", "A/B тест", "Хурд & хэмжилт"]
+                      : ["Сошиал болон веб хуудсын туршилт", "A/B тест ба CRO оновчлол", "Хурд, аналитик, хэрэглэгчийн урсгалын хяналт"]
                   }
                 />
               </motion.div>
               <motion.div variants={fadeUp}>
                 <ServiceCard
                   icon={<Users2 className="h-5 w-5" />}
-                  title={lang === "en" ? "UGC & Creatives" : "UGC ба Креатив"}
+                  title={lang === "en" ? "UGC & Creatives" : "Креатив ба стратеги"}
                   bullets={
                     lang === "en"
                       ? ["Briefs & hooks", "Editing guidance", "Content calendar"]
-                      : ["Бриф & hook", "Засварын чиглэл", "Контент календарь"]
+                      : ["Зарын концепт ба бүтцийн шийдэл", "Контентын зөвлөмж ба засвар", "Календарь, тогтмол туршилт"]
                   }
                 />
               </motion.div>
@@ -622,7 +622,7 @@ export default function Site() {
               </div>
               <div className="hidden md:flex items-center gap-6 md:gap-8 opacity-80">
                 {nav.map((n) => (
-                  <a key={n.id} href={`#${n.id}`} className="hover:opacity-100">
+                  <a key={n.id} href={`${n.id}`} className="hover:opacity-100">
                     {t({ en: n.en, mn: n.mn })}
                   </a>
                 ))}
@@ -706,7 +706,7 @@ function Header({ brand, nav, lang, setLang, currency, setCurrency, dark, setDar
                 {nav.map((n) => (
                   <a
                     key={n.id}
-                    href={`#${n.id}`}
+                    href={`${n.id}`}
                     onClick={() => setMobileOpen(false)}
                     className="rounded-lg px-2 py-2 text-sm text-white/80 transition-all duration-500 hover:bg-white/5 hover:text:white font-semibold"
                   >
