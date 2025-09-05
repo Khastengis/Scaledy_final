@@ -42,18 +42,18 @@ const OFFERING = {
   ecom: [
     {
       name: "Starter Growth",
-      tagline: "Anchor — Most Popular",
+      tagline: "Anchor — Хамгийн эрэлттэй",
       highlight: true,
       price: 4200000, // MNT / mo
-      adSpendNote: "Client ad spend 1.5M+ MNT",
+      adSpendNote: "1.5M+ MNT",
       features: [
-        "Shopify setup/optimization (bank transfer & site setup)",
+        "Shopify дэлгүүрийн тохиргоо, оновчлол",
         "Pixel + GA4 + Meta CAPI tracking",
-        "Meta Ads management (real campaigns) – 6–8 creatives/mo",
-        "Community management",
-        "3 essential flows (Email & SMS): Welcome, Sales, Abandoned Cart",
-        "Messenger/IG chatbot 24/7 (basic FAQs, order follow-up)",
-        "Weekly KPI report: Spend, Orders, Sales, ROAS",
+        "Meta Ads менежмент (жинхэнэ кампанит ажил, boost биш) — 6–8 creatives/сар",
+        "Community менежмент (сэтгэгдэл, inbox удирдлага)",
+        " ⁠3 урсгал (Email & SMS): Welcome, Sales, Abandoned Cart",
+        "Messenger/IG chatbot 24/7 (FAQs, order follow-up)",
+        "Weekly KPI тайлан: Spend, Orders, Sales, ROAS",
       ],
       promise: null,
     },
@@ -61,15 +61,15 @@ const OFFERING = {
       name: "Scaling OS",
       tagline: "Structured growth",
       price: 8600000, // MNT / mo
-      adSpendNote: "Client ad spend 6M+ MNT",
+      adSpendNote: "6M+ MNT",
       features: [
-        "Everything in Starter Growth",
-        "Meta scaling + Google Ads + TikTok Ads",
-        "15–20 creatives/mo (+ design)",
-        "6–8 flows: Post-purchase, Review, Winback, Promo blasts",
-        "Advanced chatbot: cart recovery, product finder, upsell prompts",
-        "CRO: 1–2 landing/checkout tests per month",
-        "Bi-weekly reporting call + live dashboard",
+        "Meta Ads (Facebook, IG scale)",
+        "Google Ads ба TikTok Ads",
+        "15–20 creatives/сар (дизайны хамт)",
+        "⁠6–8 урсгал: Post-purchase, Review, Winback, Promo blasts",
+        "Advanced chatbot (cart recovery, product finder, upsell prompts)",
+        "CRO: Landing/Checkout A/B тест (сар бүр 1–2 удаа)",
+        "Bi-weekly тайлангийн дуудлага + Live dashboard",
       ],
       promise: "Improve ROAS/MER by 30% within 90 days",
     },
@@ -77,13 +77,13 @@ const OFFERING = {
       name: "Market Dominator (Prestige)",
       tagline: "Category ownership",
       price: { usd: 5000 }, // USD / mo
-      adSpendNote: "Client ad spend 20M+ MNT",
+      adSpendNote: "20M+ MNT",
       features: [
-        "Everything in Scaling OS",
         "Agency Backend Setup",
-        "Dedicated creative: 40+ ads/month (UGC, scripted, testimonials)",
-        "Full-funnel ads: Meta, TikTok, Google, YouTube",
-        "Monthly CRO sprint: new LPs, A/B testing offers/bundles",
+        "40+ creatives/сар (UGC, scripted, testimonial)",
+        "Full-funnel Ads: Meta, TikTok, Google, YouTube",
+        "Monthly CRO sprint: New LPs, A/B testing offers/bundles",
+        "Full Email/SMS менежмент (2–3 кампанит ажил/7 хоног)",
         "Full Email/SMS management (2–3 campaigns/week)",
         "Loyalty program + review automation setup",
         "Weekly strategy call + quarterly roadmap",
@@ -97,11 +97,12 @@ const OFFERING = {
       tagline: "Anchor — Most Popular",
       highlight: true,
       price: { usd: 1000 }, // USD / mo
-      adSpendNote: "Client ad spend 1M+ MNT (~$300–$1,500)",
+      adSpendNote: "1M+ MNT (~$300–$1,500)",
       features: [
-        "Landing page funnel (form + calendar booking e.g., Calendly)",
+        "Landing page funnel (форм + календарь захиалга)",
         "Facebook/Instagram Ads (structured campaigns)",
-        "Automated SMS/Email 5-touch nurture",
+        "Customer data capture: Email, Утас",
+        "SMS/Email nurture (5-touch sequence)",
         "Messenger/IG chatbot (auto-response + booking prompts)",
         "Weekly KPI report: Spend, CPL, booked appointments",
       ],
@@ -113,14 +114,13 @@ const OFFERING = {
       price: { usd: 2000 }, // USD / mo
       adSpendNote: "Client ad spend $1,500–$3,000",
       features: [
-        "Everything in Starter",
-        "Website build for high-intent Google Ads",
-        "Google Search Ads (local intent; needs ≥ $10/day)",
+        "Website build for Google Ads",
+        "Google Search Ads (local intent campaigns, “dentist near me”)",
         "10–15 creatives/month + LP variants",
-        "CRO: 1–2 landing/checkout tests per month",
+        "CRO: Landing/Checkout тест (сар бүр 1–2 удаа)",
         "Email/SMS nurture (reviews, promotions, winbacks)",
         "Advanced chatbot: appointment scheduling, lead qualification",
-        "Bi-weekly report call + dashboard access",
+        "Bi-weekly тайлангийн дуудлага + Dashboard access",
       ],
       promise: "Reduce CPL by 25% and increase bookings by 50% within 90 days",
     },
@@ -128,17 +128,17 @@ const OFFERING = {
       name: "Category Leader (Prestige)",
       tagline: "Dominate your city",
       price: { usd: 4000 }, // USD / mo
-      adSpendNote: "Client ad spend $3,000–$6,000",
+      adSpendNote: "$3,000–$6,000",
       features: [
         "Everything in Growth Engine",
         "Agency Backend Setup",
         "YouTube/TikTok awareness campaigns",
         "Dedicated lead manager system: instant SMS + auto-callback < 5 mins",
         "CRM setup (HubSpot/Pipedrive) + full pipeline automation",
-        "Branded microsite (service showcase + testimonials)",
-        "Monthly strategy workshop with founder",
-        "Facebook/Instagram Ads (UGC)",
-        "KPI guarantee clause: min. X qualified leads/month",
+        "Branded microsite (үйлчилгээ, testimonials, calendar booking)",
+        "Monthly strategy workshop (founder-тай)",
+        "Facebook/Instagram Ads (UGC creatives)",
+        "KPI Guarantee: Сард хамгийн багадаа X чанартай lead",
       ],
       promise: "Become #1 in city searches and lead volume within 90 days",
     },
@@ -392,33 +392,33 @@ export default function Site() {
               <motion.div variants={fadeUp}>
                 <ServiceCard
                   icon={<BarChart3 className="h-5 w-5" />}
-                  title={lang === "en" ? "Performance Media Buying" : "Өсөлт ба гүйцэтгэл"}
+                  title={lang === "en" ? "Performance Media Buying" : "Growth engine & Scale"}
                   bullets={
                     lang === "en"
                       ? ["Meta, TikTok, Google", "Offer + audience testing", "Daily optimization"]
-                      : ["Meta, TikTok, Google зар", "Бүтээгдэхүүний санал ба зорилтот хэрэглэгчийн тест", "Тасралтгүй оновчлол"]
+                      : ["Shopify дэлгүүрийн тохиргоо, оновчлол", "Meta, TikTok, Google зар", "Tracking систем: Pixel + GA4 + CAPI", "KPI тайлан, өсөлтийн баталгаа"]
                   }
                 />
               </motion.div>
               <motion.div variants={fadeUp}>
                 <ServiceCard
                   icon={<Building2 className="h-5 w-5" />}
-                  title={lang === "en" ? "CRO & Landing Pages" : "Хөрвүүлэлт ба туршлага"}
+                  title={lang === "en" ? "CRO & Landing Pages" : "Conversion Ecosystem"}
                   bullets={
                     lang === "en"
                       ? ["On-page experiments", "A/B testing", "Speed & tracking"]
-                      : ["Сошиал болон веб хуудсын туршилт", "A/B тест ба CRO оновчлол", "Хурд, аналитик, хэрэглэгчийн урсгалын хяналт"]
+                      : ["Lead generation: funnel + календарь бүртгэл", "Автомат имэйл & SMS урсгал", "Chatbot — 24/7 захиалга, асуулт", "CRO: Landing/checkout тест, хэрэглэгчийн урсгалын оновчлол"]
                   }
                 />
               </motion.div>
               <motion.div variants={fadeUp}>
                 <ServiceCard
                   icon={<Users2 className="h-5 w-5" />}
-                  title={lang === "en" ? "UGC & Creatives" : "Креатив ба стратеги"}
+                  title={lang === "en" ? "UGC & Creatives" : "Brand Strategy"}
                   bullets={
                     lang === "en"
                       ? ["Briefs & hooks", "Editing guidance", "Content calendar"]
-                      : ["Зарын концепт ба бүтцийн шийдэл", "Контентын зөвлөмж ба засвар", "Календарь, тогтмол туршилт"]
+                      : ["Бүтээлч контент, видео, зураг", "Контентийн зөвлөмж, roadmap & стратеги", "Хэрэглэгчийн дата цуглуулалт + CRM автоматжуулалт", "Брэндийн байршуулалт ба authority өсгөх"]
                   }
                 />
               </motion.div>
@@ -872,20 +872,20 @@ function Plan({
 function faq(lang) {
   return [
     {
-      q: lang === "en" ? "How fast can we launch?" : "Хэзээ эхлэх вэ?",
-      a: lang === "en" ? "Most brands launch within 7–10 days after audit and setup." : "Аудит, тохиргооны дараа ихэнх брэнд 7–10 хоногт эхэлдэг.",
+      q: lang === "en" ? "How fast can we launch?" : "Та бүхэнтэй хэрхэн харилцах вэ, тогтмол тайлан, дуудлага хийдэг үү?",
+      a: lang === "en" ? "Most brands launch within 7–10 days after audit and setup." : "Бид 14 хоног тутамд KPI тайлан илгээж, стратегийн дуудлага хийнэ. Өдөр тутмын асуулт, харилцааг dedicated менежер чат болон имэйлээр шуурхай зохицуулна",
     },
     {
-      q: lang === "en" ? "Do you need long-term contracts?" : "Урт хугацааны гэрээ хэрэгтэй юу?",
-      a: lang === "en" ? "No. Month-to-month with clear KPIs." : "Үгүй. KPI тодорхой, сараар сунгана.",
+      q: lang === "en" ? "Do you need long-term contracts?" : "Хэрэв миний бизнес шинээр эхэлж байгаа бол та бүхэн ажиллах уу?",
+      a: lang === "en" ? "No. Month-to-month with clear KPIs." : "Тийм ээ. Шинээр эхэлж буй брэндүүдэд зориулсан Starter Growth багц бий. Энэ нь системийг зөв суурилуулж, эхний борлуулалтыг тогтвортой болгоход тусална.",
     },
     {
-      q: lang === "en" ? "Can you work with my existing creatives?" : "Одоо байгаа креатив ашиглаж болох уу?",
-      a: lang === "en" ? "Yes — we test your assets and supply new angles if needed." : "Тийм — таны материалыг тестлээд, шаардлагатай бол шинэ өнцөг гаргана.",
+      q: lang === "en" ? "Can you work with my existing creatives?" : "Бидний Facebook/Instagram account дээр шууд ажиллах уу, эсвэл шинэ account нээх үү?",
+      a: lang === "en" ? "Yes — we test your assets and supply new angles if needed." : "Хэрэв танай social account-ууд бэлэн бол бид шууд ажиллаж эхэлнэ. Хэрэв зарим тохиргоо дутуу байвал бид дутагдаж буй хэсгийг нөхөж, бүрэн бэлтгэсний дараа эхлүүлнэ",
     },
     {
-      q: lang === "en" ? "Which industries do you support?" : "Ямар салбаруудтай ажилладаг вэ?",
-      a: lang === "en" ? "E-commerce and local services (beauty, fitness, education, food, more)." : "E-коммерс болон үйлчилгээ (гоо сайхан, фитнес, боловсрол, хоол, бусад).",
+      q: lang === "en" ? "Which industries do you support?" : "Монголын зах зээлд л чиглэдэг үү, эсвэл олон улсад зар явуулж болох уу?",
+      a: lang === "en" ? "E-commerce and local services (beauty, fitness, education, food, more)." : "Энэ нь танай бизнесийн fulfillment-ээс хамаарна. Хэрэв зөвхөн Монголд хүргэлт хийдэг бол бид Монголын зах зээлд төвлөрнө. Харин олон улсад хүргэх боломжтой бол тухайн улсын зах зээлд зориулж зар сурталчилгаа, стратеги боловсруулж өгнө.",
     },
   ];
 }
