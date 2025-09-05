@@ -33,7 +33,7 @@ const formatPrice = (amount, currency, USD_TO_MNT) => {
 };
 
 const OFFER_TRACKS = [
-  { key: "ecom", labelEn: "E-Commerce (Shopify)", labelMn: "E-коммерс (Shopify)" },
+  { key: "ecom", labelEn: "E-Commerce (Shopify)", labelMn: "E-коммерс" },
   { key: "service", labelEn: "Service-Based", labelMn: "Үйлчилгээний бизнес" },
 ];
 
@@ -147,7 +147,7 @@ const OFFERING = {
 
 // ---------- main ----------
 export default function Site() {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("mn");
   const [currency, setCurrency] = useState("MNT");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [elevateHeader, setElevateHeader] = useState(false);
@@ -174,10 +174,10 @@ export default function Site() {
   const brand = "Scaledy";
   const USD_TO_MNT = 3450;
   const nav = [
-    { id: "#work", en: "Work", mn: "Төслүүд" },
+    // { id: "#work", en: "Work", mn: "Төслүүд" },
     { id: "#services", en: "Services", mn: "Үйлчилгээ" },
     { id: "#results", en: "Results", mn: "Үр дүн" },
-    { id: "#process", en: "Process", mn: "Процесс" },
+    // { id: "#process", en: "Process", mn: "Процесс" },
     { id: "#pricing", en: "Pricing", mn: "Үнэ" },
     { id: "\apply", en: "Contact", mn: "Холбогдох" },
   ];
@@ -341,7 +341,7 @@ export default function Site() {
                 }}
               >
                 <div className="flex gap-10 w-max animate-[marquee_32s_linear_infinite] will-change-transform">
-                  {["LALAR", "GICHII", "YANHAN", "PIZDA", "GOMBOO", "DONGIO", "JULDAK"]
+                  {["BrandOne", "NomadTea", "SteppeFit", "UlaanStore", "SkyBakery", "AltanTech", "KhatanBeauty"]
                     .concat(["BrandOne", "NomadTea", "SteppeFit", "UlaanStore", "SkyBakery", "AltanTech", "KhatanBeauty"])
                     .map((name, i) => (
                       <div
@@ -658,7 +658,8 @@ function Header({ brand, nav, lang, setLang, currency, setCurrency, dark, setDar
             </a>
           ))}
         </nav>
-        <div className="hidden md:flex items-center gap-2">
+        {/* nemeh */}
+        {/* <div className="hidden md:flex items-center gap-2">
           <button
             onClick={() => setLang((p) => (p === "en" ? "mn" : "en"))}
             className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-900"
@@ -666,7 +667,8 @@ function Header({ brand, nav, lang, setLang, currency, setCurrency, dark, setDar
           >
             {lang.toUpperCase()}
           </button>
-        </div>
+        </div> */}
+        {/* nemeh */}
         {/* Mobile */}
         <button className="md:hidden rounded-xl border p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Open menu">
           <Menu className="h-5 w-5" />
