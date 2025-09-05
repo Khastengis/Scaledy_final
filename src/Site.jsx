@@ -185,7 +185,7 @@ export default function Site() {
 
   const counters = [
     { key: "brands", end: 120, label: { en: "+ brands supported", mn: "+ брэнд хамтран ажилласан" } },
-    { key: "ad", end: 1000000, label: { en: "$ managed ad/mo*", mn: "₮ зарын төсөв/сар*" } },
+    { key: "ad", end: 47000000, label: { en: "$ managed ad/mo*", mn: "₮ зарын төсөв/сар*" } },
     { key: "roas", end: 4.8, decimals: 1, label: { en: "avg. ROAS on scale*", mn: "дундаж ROAS*" } },
   ];
 
@@ -295,12 +295,13 @@ export default function Site() {
                         </span>
                       </a>
                     </Magnetic>
-                    <a
+                    {/* <a
                       href="#work"
                       className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 font-medium hover:bg-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
                     >
                       {lang === "en" ? "See our work" : "Төслүүдийг харах"}
-                    </a>
+                    </a> */}
+                
                   </motion.div>
                 </motion.div>
 
@@ -340,7 +341,7 @@ export default function Site() {
                 }}
               >
                 <div className="flex gap-10 w-max animate-[marquee_32s_linear_infinite] will-change-transform">
-                  {["BrandOne", "NomadTea", "SteppeFit", "UlaanStore", "SkyBakery", "AltanTech", "KhatanBeauty"]
+                  {["LALAR", "GICHII", "YANHAN", "PIZDA", "GOMBOO", "DONGIO", "JULDAK"]
                     .concat(["BrandOne", "NomadTea", "SteppeFit", "UlaanStore", "SkyBakery", "AltanTech", "KhatanBeauty"])
                     .map((name, i) => (
                       <div
@@ -425,7 +426,8 @@ export default function Site() {
           </section>
 
           {/* WORK */}
-          <section id="work" className="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20">
+          {/* SELECTED WORK */}
+          {/* <section id="work" className="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">
               {lang === "en" ? "Selected Work" : "Сонгосон төслүүд"}
             </h2>
@@ -446,10 +448,11 @@ export default function Site() {
                 </motion.div>
               ))}
             </motion.div>
-          </section>
+          </section> */}
 
           {/* PROCESS */}
-          <section id="process" className="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20">
+          {/* HOW WE WORK */}
+          {/* <section id="process" className="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20">
             <div className="flex items-center gap-2 mb-6">
               <Handshake className="h-5 w-5" />
               <h2 className="text-2xl md:text-3xl font-bold">{lang === "en" ? "How we work" : "Бид хэрхэн ажилладаг"}</h2>
@@ -480,7 +483,7 @@ export default function Site() {
                 </motion.li>
               ))}
             </motion.ol>
-          </section>
+          </section> */}
 
           {/* PRICING */}
           <section id="pricing" className="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20">
@@ -581,7 +584,7 @@ export default function Site() {
                   variants={fadeUp}
                   className="rounded-2xl border p-6 bg-slate-900/40 backdrop-blur hover:shadow-xl transition"
                 >
-                  <div className="text-sm opacity-70">★ ★ ★ ★ ★</div>
+                  <div className="text-sm opacity-70" style={{ color: "#FFD700" }}>★ ★ ★ ★ ★</div>
                   <p className="mt-3">{r.q}</p>
                   <div className="mt-4 text-sm opacity-70">— {r.n}</div>
                 </motion.div>
