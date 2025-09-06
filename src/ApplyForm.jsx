@@ -117,6 +117,23 @@ export default function ApplyForm() {
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
 
+  // ✅ ADD — tiny helper to safely call fbq
+  const track = (name, params = {}) => {
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", name, params);
+      // optional debug:
+      // window.fbq("trackCustom", `Debug_${name}`, params);
+      console.log("[Pixel]", name, params);
+    } else {
+      console.warn("[Pixel] fbq not found");
+    }
+  };
+
+  // ✅ ADD — fire once when this page is viewed
+  useEffect(() => {
+    track("ViewContent", { content_name: "ApplyForm" });
+  }, []);
+
   // persist dark mode
   useEffect(() => {
     const root = document.documentElement;
@@ -162,12 +179,24 @@ export default function ApplyForm() {
               <div className="glow-card__inner rounded-2xl bg-white/70 dark:bg-slate-900/40 backdrop-blur shadow-black/20 overflow-hidden">
                 <div className="w-full h-[78vh]">
                   <Widget
-                    // id="KbaFkFON"
                     id="ULD3UGwS"
                     style={{ width: "100%", height: "100%" }}
                     autoFocus
                     hidden={{ source: "website" }}
-                   
+
+                    /* ✅ ADD — Pixel hooks */
+                    onReady={() => {
+                      track("ViewContent", { content_name: "ApplyFormReady" });
+                    }}
+                    onSubmit={() => {
+                      // Conversion for your embedded Typeform
+                      track("Lead", { content_name: "TypeformApply" });
+                    }}
+                    onEvent={(e) => {
+                      if (e?.type === "form-submit") {
+                        track("Lead", { content_name: "TypeformApply_onEvent" });
+                      }
+                    }}
                   />
                 </div>
               </div>
