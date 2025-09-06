@@ -18,6 +18,7 @@ import {
 import logo from "./assets/logo.png";
 import { Link } from "react-router-dom";
 import ApplyForm from "./ApplyForm";
+import heroImage from "./assets/Rev_case_study.png"; 
 
 // ---------- helpers ----------
 const formatPrice = (amount, currency, USD_TO_MNT) => {
@@ -33,8 +34,8 @@ const formatPrice = (amount, currency, USD_TO_MNT) => {
 };
 
 const OFFER_TRACKS = [
-  { key: "ecom", labelEn: "E-Commerce (Shopify)", labelMn: "E-коммерс" },
   { key: "service", labelEn: "Service-Based", labelMn: "Үйлчилгээний бизнес" },
+  { key: "ecom", labelEn: "E-Commerce (Shopify)", labelMn: "E-коммерс" },
 ];
 
 // ---------- offerings ----------
@@ -42,105 +43,107 @@ const OFFERING = {
   ecom: [
     {
       name: "Starter Growth",
-      tagline: "Anchor — Хамгийн эрэлттэй",
+      tagline: "Хамгийн эрэлттэй",
       highlight: true,
-      price: 4200000, // MNT / mo
-      adSpendNote: "1.5M+ MNT",
+      price: {usd: 1200}, // MNT / mo
+      // adSpendNote: "1.5M+ MNT",
       features: [
-        "Shopify дэлгүүрийн тохиргоо, оновчлол",
+        "Онлайн дэлгүүрийн тохиргоо",
         "Pixel + GA4 + Meta CAPI tracking",
-        "Meta Ads менежмент (жинхэнэ кампанит ажил, boost биш) — 6–8 creatives/сар",
+        "Meta Ads менежмент — 6–8 creatives/сард",
         "Community менежмент (сэтгэгдэл, inbox удирдлага)",
-        " ⁠3 урсгал (Email & SMS): Welcome, Sales, Abandoned Cart",
-        "Messenger/IG chatbot 24/7 (FAQs, order follow-up)",
-        "Weekly KPI тайлан: Spend, Orders, Sales, ROAS",
+        "3 flow (Email & SMS): Угтах, Урамшуулал, Орхигдсон сагс",
+        "Messenger/IG chatbot 24/7 (FAQs, Захиалга баталгаажуулалт)",
+        "2 долоо хоног болгон KPI тайлан: Зарлага, Захиалга, Худалдан авалт, ROAS",
       ],
       promise: null,
     },
     {
       name: "Scaling OS",
       tagline: "Structured growth",
-      price: 8600000, // MNT / mo
-      adSpendNote: "6M+ MNT",
+      price: {usd: 1700}, // MNT / mo
+      // adSpendNote: "6M+ MNT",
       features: [
         "Meta Ads (Facebook, IG scale)",
         "Google Ads ба TikTok Ads",
-        "15–20 creatives/сар (дизайны хамт)",
-        "⁠6–8 урсгал: Post-purchase, Review, Winback, Promo blasts",
-        "Advanced chatbot (cart recovery, product finder, upsell prompts)",
+        "15–20 creatives/сард",
+        "6–8 flow: Худалдан авалтын дараах урсгал, Сэтгэгдэл, Winbacks, Хямдрал, Урамшуулал",
+        "Advanced chatbot (Бүтээгдэхүүн хайлт, Дагалдах/нэмэлт санал өгөх)",
         "CRO: Landing/Checkout A/B тест (сар бүр 1–2 удаа)",
-        "Bi-weekly тайлангийн дуудлага + Live dashboard",
+        "2 долоо хоног болгон KPI тайлангийн дуудлага + Live dashboard",
       ],
-      promise: "Improve ROAS/MER by 30% within 90 days",
+      // promise: "Improve ROAS/MER by 30% within 90 days",
     },
     {
       name: "Market Dominator (Prestige)",
       tagline: "Category ownership",
-      price: { usd: 5000 }, // USD / mo
-      adSpendNote: "20M+ MNT",
+      price: { usd: 3500 }, // USD / mo
+      // adSpendNote: "20M+ MNT",
       features: [
         "Agency Backend Setup",
-        "40+ creatives/сар (UGC, scripted, testimonial)",
-        "Full-funnel Ads: Meta, TikTok, Google, YouTube",
-        "Monthly CRO sprint: New LPs, A/B testing offers/bundles",
-        "Full Email/SMS менежмент (2–3 кампанит ажил/7 хоног)",
+        "40+ creatives/сар (UGC, Боловсруулсан зар, Сэтгэгдэл)",
+        "Бүтэн funnel Ads: Meta, TikTok, Google, YouTube",
+        "Сар бүрийн CRO туршилт: Шинэ LP, A/B тест, Санал, урамшуулал/Багц бүтээгдэхүүн",
+        "Email/SMS менежмент (2–3 campaign/7 хоногт)",
         "Full Email/SMS management (2–3 campaigns/week)",
-        "Loyalty program + review automation setup",
-        "Weekly strategy call + quarterly roadmap",
+        "Loyalty програм + Сэтгэгдэл автоматжуулалтын тохиргоо",
+        "7 хоног тутмын стратегийн дуудлага + Улирлын төлөвлөгөө",
+        "Бидэнтэй стратегийн дуудлага хийснээр энд бичигдээгүй нэмэлт мэдээллийг авах боломжтой"
       ],
-      promise: "Double monthly online revenue within 90 days (with agreed ad budget)",
+      // promise: "Double monthly online revenue within 90 days (with agreed ad budget)",
     },
   ],
   service: [
     {
       name: "Lead Engine Starter",
-      tagline: "Anchor — Most Popular",
+      tagline: "Хамгийн эрэлттэй",
       highlight: true,
-      price: { usd: 1000 }, // USD / mo
-      adSpendNote: "1M+ MNT (~$300–$1,500)",
+      price: { usd: 1550 }, // USD / mo
+      // adSpendNote: "1M+ MNT (~$300–$1,500)",
       features: [
         "Landing page funnel (форм + календарь захиалга)",
-        "Facebook/Instagram Ads (structured campaigns)",
-        "Customer data capture: Email, Утас",
-        "SMS/Email nurture (5-touch sequence)",
-        "Messenger/IG chatbot (auto-response + booking prompts)",
-        "Weekly KPI report: Spend, CPL, booked appointments",
+        "Facebook/Instagram Ads (Системтэй campaigns)",
+        "Хэрэглэгчийн мэдээллийг цуглуулах: Email, Утас",
+        "SMS/Email маркетинг (5-touch sequence)",
+        "Messenger/IG chatbot (Автомат хариулагч + Захиалга авах)",
+        "2 долоо хоног болгон  Стратегийн тайлан: Зарлага, CPL, Захиалга",
       ],
-      promise: "Generate consistent weekly leads (min. 20–30 leads/mo)",
+      // promise: "Generate consistent weekly leads (min. 20–30 leads/mo)",
     },
     {
       name: "Growth Engine",
       tagline: "Steady monthly lead flow",
-      price: { usd: 2000 }, // USD / mo
-      adSpendNote: "Client ad spend $1,500–$3,000",
+      price: { usd: 2100 }, // USD / mo
+      // adSpendNote: "Client ad spend $1,500–$3,000",
       features: [
-        "Website build for Google Ads",
-        "Google Search Ads (local intent campaigns, “dentist near me”)",
-        "10–15 creatives/month + LP variants",
+        "Google Ad-ын Website бүтээх",
+        "Google хайлтын Ads (Байршилд суурилсан хайлтын campaigns)",
+        "10–15 creatives/сард + LP хувилбарууд",
         "CRO: Landing/Checkout тест (сар бүр 1–2 удаа)",
-        "Email/SMS nurture (reviews, promotions, winbacks)",
-        "Advanced chatbot: appointment scheduling, lead qualification",
-        "Bi-weekly тайлангийн дуудлага + Dashboard access",
+        "⁠Email/SMS маркетинг: Сэтгэгдэл, Урамшуулал, Winbacks",
+        "Advanced chatbot: Цаг товлох, Боломжит харилцагчийг тодорхойлох",
+        "⁠2 долоо хоног болгон гүйцэтгэлийн тайлан + Dashboard access",
       ],
-      promise: "Reduce CPL by 25% and increase bookings by 50% within 90 days",
+      // promise: "Reduce CPL by 25% and increase bookings by 50% within 90 days",
     },
     {
       name: "Category Leader (Prestige)",
-      tagline: "Dominate your city",
-      price: { usd: 4000 }, // USD / mo
-      adSpendNote: "$3,000–$6,000",
+      tagline: "Dominate your country",
+      price: { usd: 4300 }, // USD / mo
+      // adSpendNote: "$3,000–$6,000",
       features: [
-        "Everything in Growth Engine",
-        "Agency Backend Setup",
-        "YouTube/TikTok awareness campaigns",
-        "Dedicated lead manager system: instant SMS + auto-callback < 5 mins",
+        "TikTok campaigns + SEO",
+        "Боломжит харилцагчийн удирдлагын систем: Шуурхай SMS + Автомат эргэн холбогдох < 5 мин",
+        "CRM тохиргоо (HubSpot/Pipedrive) + Pipeline Автоматжуулалт",
+        "Branded microsite (Үйлчилгээ, Хэрэглэгчийн үнэлгээ, Цаг захиалах)",
         "CRM setup (HubSpot/Pipedrive) + full pipeline automation",
-        "Branded microsite (үйлчилгээ, testimonials, calendar booking)",
-        "Monthly strategy workshop (founder-тай)",
+        "Сар бүрийн стратегийн workshop",
         "Facebook/Instagram Ads (UGC creatives)",
+        "KPI баталгаа: Сард хамгийн багадаа 100+ чанартай lead",
         "KPI Guarantee: Сард хамгийн багадаа X чанартай lead",
+        "Бидэнтэй стратегийн дуудлага хийснээр энд бичигдээгүй нэмэлт мэдээллийг авах боломжтой"
       ],
-      promise: "Become #1 in city searches and lead volume within 90 days",
+      // promise: "Become #1 in city searches and lead volume within 90 days",
     },
   ],
 };
@@ -154,7 +157,7 @@ export default function Site() {
   const [dark, setDark] = useState(() => {
     return true;    
   });
-  const [track, setTrack] = useState("ecom"); // "ecom" | "service"
+  const [track, setTrack] = useState("service"); // "ecom" | "service"
 
   // Persist & apply dark mode to <html>
   useEffect(() => {
@@ -184,9 +187,9 @@ export default function Site() {
   const t = (obj) => obj[lang];
 
   const counters = [
-    { key: "brands", end: 120, label: { en: "+ brands supported", mn: "+ брэнд хамтран ажилласан" } },
-    { key: "ad", end: 47000000, label: { en: "$ managed ad/mo*", mn: "₮ зарын төсөв/сар*" } },
-    { key: "roas", end: 4.8, decimals: 1, label: { en: "avg. ROAS on scale*", mn: "дундаж ROAS*" } },
+    { key: "brands", end: 20, suffix: "+", label: { en: "+ brands supported", mn: "+ брэнд хамтран ажилласан" } },
+    { key: "ad", end: 47000000, suffix: "+", label: { en: "$ managed ad/mo*", mn: "₮ зарын төсөв/сар*" } },
+    { key: "roas", end: 4.8, suffix: "", decimals: 1, label: { en: "avg. ROAS on scale*", mn: "дундаж ROAS*" } },
   ];
 
   // Motion presets
@@ -262,7 +265,7 @@ export default function Site() {
 
             <div className="relative mx-auto max-w-7xl px-6 md:px-8 py-20 md:py-28">
               <div className="grid md:grid-cols-12 gap-10 items-center">
-                <motion.div className="md:col-span-7" variants={stagger} initial="hidden" animate="show">
+                <motion.div className="md:col-span-6" variants={stagger} initial="hidden" animate="show">
                   <motion.div
                     variants={fadeUp}
                     className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs mb-6 backdrop-blur supports-[backdrop-filter]:bg-slate-900/40"
@@ -305,7 +308,7 @@ export default function Site() {
                   </motion.div>
                 </motion.div>
 
-                <motion.div
+                {/* <motion.div
                   className="md:col-span-5"
                   initial={{ opacity: 0, y: reduceMotion ? 0 : 10, scale: reduceMotion ? 1 : 0.98 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -322,7 +325,21 @@ export default function Site() {
                       {lang === "en" ? "Your case study video / image" : "Танай кейс видеo / зураг"}
                     </motion.div>
                   </div>
+                </motion.div> */}
+                <motion.div
+                  className="md:col-span-6"
+                  initial={{ opacity: 0, y: reduceMotion ? 0 : 10, scale: reduceMotion ? 1 : 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                >
+                  <div className="relative rounded-3xl border overflow-hidden bg-slate-900">
+                    <img src={heroImage} alt="…" className="block w-full h-auto" />
+                  </div>
+
                 </motion.div>
+
+
+
               </div>
             </div>
           </section>
@@ -367,7 +384,7 @@ export default function Site() {
             >
               {counters.map((c) => (
                 <motion.div key={c.key} variants={fadeUp}>
-                  <Counter end={c.end} decimals={c.decimals} label={t(c.label)} />
+                  <Counter end={c.end} decimals={c.decimals} suffix={c.suffix} label={t(c.label)} />
                 </motion.div>
               ))}
             </motion.div>
@@ -407,7 +424,7 @@ export default function Site() {
                   bullets={
                     lang === "en"
                       ? ["On-page experiments", "A/B testing", "Speed & tracking"]
-                      : ["Lead generation: funnel + календарь бүртгэл", "Автомат имэйл & SMS урсгал", "Chatbot — 24/7 захиалга, асуулт", "CRO: Landing/checkout тест, хэрэглэгчийн урсгалын оновчлол"]
+                      : ["Боломжит харилцагч татах: funnel + календарь бүртгэл", "Автомат имэйл & SMS урсгал", "Chatbot — 24/7 захиалга, асуулт хариулт", "CRO: Landing/checkout тест, хэрэглэгчийн flow сайжруулалт"]
                   }
                 />
               </motion.div>
@@ -418,7 +435,7 @@ export default function Site() {
                   bullets={
                     lang === "en"
                       ? ["Briefs & hooks", "Editing guidance", "Content calendar"]
-                      : ["Бүтээлч контент, видео, зураг", "Контентийн зөвлөмж, roadmap & стратеги", "Хэрэглэгчийн дата цуглуулалт + CRM автоматжуулалт", "Брэндийн байршуулалт ба authority өсгөх"]
+                      : ["Бүтээлч контент: видео, зураг", "Контентийн зөвлөмж, roadmap + стратегийн дуудлага", "Хэрэглэгчийн дата цуглуулалт + CRM автоматжуулалт", "Брэндийн байр суурь + нэр хүнд өсгөх"]
                   }
                 />
               </motion.div>
@@ -555,11 +572,11 @@ export default function Site() {
               ))}
             </motion.div>
 
-            <p className="text-xs text-slate-400 mt-4">
+            {/* <p className="text-xs text-slate-400 mt-4">
               {lang === "en"
                 ? "Includes monthly management. Ad budgets listed are separate client spend; adjustable. No long-term lock-ins."
                 : "Сарын менежмент багтсан. Дурдсан зарын төсөв нь харилцагчийн тусдаа зардал; өөрчилж болно. Урт хугацааны гэрээ шаардлагагүй."}
-            </p>
+            </p> */}
           </section>
 
           {/* TESTIMONIALS */}
@@ -735,8 +752,9 @@ function Header({ brand, nav, lang, setLang, currency, setCurrency, dark, setDar
   );
 }
 
-function Counter({ end, label, decimals = 0 }) {
+function Counter({ end, label, decimals = 0, suffix = "" }) {
   const [value, setValue] = useState(0);
+  const [done, setDone] = useState(false);
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -748,35 +766,44 @@ function Counter({ end, label, decimals = 0 }) {
 
   useEffect(() => {
     if (!visible) return;
-    const startTime = performance.now();
+    const start = performance.now();
     const dur = 900;
     const step = (now) => {
-      const p = Math.min((now - startTime) / dur, 1);
+      const p = Math.min((now - start) / dur, 1);
       const eased = 1 - Math.pow(1 - p, 3);
       const current = end * eased;
       setValue(current);
       if (p < 1) requestAnimationFrame(step);
+      else setDone(true); // when finished
     };
     requestAnimationFrame(step);
   }, [visible, end]);
 
   const fmt = (n) => {
     if (decimals) return n.toFixed(decimals);
-    if (n >= 1000000) return Math.round(n / 100000) / 10 + "M";
-    if (n >= 1000) return Math.round(n / 100) / 10 + "k";
+    if (n >= 1_000_000) return Math.round(n / 100_000) / 10 + "M";
+    if (n >= 1_000) return Math.round(n / 100) / 10 + "k";
     return Math.round(n).toString();
   };
 
   return (
-    <div ref={ref} className="rounded-2xl border p-6 flex items-center gap-6 md:gap-8 bg-slate-900/40 backdrop-blur hover:shadow-xl transition">
+    <div
+      ref={ref}
+      className="rounded-2xl border p-6 flex items-center gap-6 md:gap-8 bg-slate-900/40 backdrop-blur hover:shadow-xl transition"
+    >
       <CircleCheck className="h-5 w-5" />
       <div>
-        <div className="text-3xl font-extrabold">{fmt(value)}</div>
+        <div className="text-3xl font-extrabold">
+          {fmt(value)}
+          {done && suffix && <span className="ml-1">{suffix}</span>}
+        </div>
         <div className="text-sm opacity-70">{label}</div>
       </div>
     </div>
   );
 }
+
+
 
 function ServiceCard({ icon, title, bullets }) {
   return (
