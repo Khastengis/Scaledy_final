@@ -25,12 +25,12 @@ const formatPrice = (amount, currency, USD_TO_MNT) => {
   if (amount == null) return "";
   if (typeof amount === "object" && amount.usd != null) {
     return currency === "USD"
-      ? `$${amount.usd.toLocaleString()} / mo`
-      : `${Math.round(amount.usd * USD_TO_MNT).toLocaleString()} MNT / mo`;
+      ? `$${amount.usd.toLocaleString()} USD / mo`
+      : `₮${Math.round(amount.usd * USD_TO_MNT).toLocaleString()} MNT / mo`;
   }
   return currency === "USD"
-    ? `$${Math.round(amount / USD_TO_MNT).toLocaleString()} / mo`
-    : `${amount.toLocaleString()} MNT / mo`;
+    ? `$${Math.round(amount / USD_TO_MNT).toLocaleString()} USD / mo`
+    : `₮${amount.toLocaleString()} MNT / mo`;
 };
 
 const OFFER_TRACKS = [
@@ -140,7 +140,6 @@ const OFFERING = {
         "Сар бүрийн стратегийн workshop",
         "Facebook/Instagram Ads (UGC creatives)",
         "KPI баталгаа: Сард хамгийн багадаа 100+ чанартай lead",
-        "KPI Guarantee: Сард хамгийн багадаа X чанартай lead",
         "Бидэнтэй стратегийн дуудлага хийснээр энд бичигдээгүй нэмэлт мэдээллийг авах боломжтой"
       ],
       // promise: "Become #1 in city searches and lead volume within 90 days",
@@ -908,7 +907,7 @@ function faq(lang) {
     },
     {
       q: lang === "en" ? "Can you work with my existing creatives?" : "Бидний Facebook/Instagram account дээр шууд ажиллах уу, эсвэл шинэ account нээх үү?",
-      a: lang === "en" ? "Yes — we test your assets and supply new angles if needed." : "Хэрэв танай social account-ууд бэлэн бол бид шууд ажиллаж эхэлнэ. Хэрэвээ дутуу байвал бид дутагдаж буй хэсгийг нөхөж, бүрэн бэлтгэсний дараа эхлүүлнэ",
+      a: lang === "en" ? "Yes — we test your assets and supply new angles if needed." : "Хэрэв танай social account-ууд бэлэн бол бид шууд ажиллаж эхэлнэ. Хэрвээ дутуу байвал бид дутагдаж буй хэсгийг нөхөж, бүрэн бэлтгэсний дараа эхлүүлнэ.",
     },
     {
       q: lang === "en" ? "Which industries do you support?" : "Монголын зах зээлд л чиглэдэг үү, эсвэл олон улсад зар явуулж болох уу?",
