@@ -45,7 +45,7 @@ const OFFERING = {
       name: "Starter Growth",
       tagline: "Хамгийн эрэлттэй",
       highlight: true,
-      price: {usd: 1200}, // MNT / mo
+      price: {usd: 700}, // MNT / mo
       // adSpendNote: "1.5M+ MNT",
       features: [
         "Онлайн дэлгүүрийн тохиргоо",
@@ -54,14 +54,14 @@ const OFFERING = {
         "Community менежмент (сэтгэгдэл, inbox удирдлага)",
         "3 flow (Email & SMS): Угтах, Урамшуулал, Орхигдсон сагс",
         "Messenger/IG chatbot 24/7 (FAQs, Захиалга баталгаажуулалт)",
-        "2 долоо хоног болгон KPI тайлан: Зарлага, Захиалга, Худалдан авалт, ROAS",
+        "Долоо хоног болгон KPI тайлан: Зарлага, Захиалга, Худалдан авалт, ROAS",
       ],
       promise: null,
     },
     {
       name: "Scaling OS",
       tagline: "Structured growth",
-      price: {usd: 1700}, // MNT / mo
+      price: {usd: 1100}, // MNT / mo
       // adSpendNote: "6M+ MNT",
       features: [
         "Meta Ads (Facebook, IG scale)",
@@ -77,7 +77,7 @@ const OFFERING = {
     {
       name: "Market Dominator (Prestige)",
       tagline: "Category ownership",
-      price: { usd: 3500 }, // USD / mo
+      price: { usd: 2100 }, // USD / mo
       // adSpendNote: "20M+ MNT",
       features: [
         "Agency Backend Setup",
@@ -98,7 +98,7 @@ const OFFERING = {
       name: "Lead Engine Starter",
       tagline: "Хамгийн эрэлттэй",
       highlight: true,
-      price: { usd: 1550 }, // USD / mo
+      price: { usd: 1350 }, // USD / mo
       // adSpendNote: "1M+ MNT (~$300–$1,500)",
       features: [
         "Landing page funnel (форм + календарь захиалга)",
@@ -106,14 +106,14 @@ const OFFERING = {
         "Хэрэглэгчийн мэдээллийг цуглуулах: Email, Утас",
         "SMS/Email маркетинг (5-touch sequence)",
         "Messenger/IG chatbot (Автомат хариулагч + Захиалга авах)",
-        "2 долоо хоног болгон  Стратегийн тайлан: Зарлага, CPL, Захиалга",
+        "Долоо хоног болгон  Стратегийн тайлан: Зарлага, CPL, Захиалга",
       ],
       // promise: "Generate consistent weekly leads (min. 20–30 leads/mo)",
     },
     {
       name: "Growth Engine",
       tagline: "Steady monthly lead flow",
-      price: { usd: 2100 }, // USD / mo
+      price: { usd: 1900 }, // USD / mo
       // adSpendNote: "Client ad spend $1,500–$3,000",
       features: [
         "Google Ad-ын Website бүтээх",
@@ -129,7 +129,7 @@ const OFFERING = {
     {
       name: "Category Leader (Prestige)",
       tagline: "Dominate your country",
-      price: { usd: 4300 }, // USD / mo
+      price: { usd: 3800 }, // USD / mo
       // adSpendNote: "$3,000–$6,000",
       features: [
         "TikTok campaigns + SEO",
@@ -358,8 +358,8 @@ export default function Site() {
                 }}
               >
                 <div className="flex gap-10 w-max animate-[marquee_32s_linear_infinite] will-change-transform">
-                  {["BrandOne", "NomadTea", "SteppeFit", "UlaanStore", "SkyBakery", "AltanTech", "KhatanBeauty"]
-                    .concat(["BrandOne", "NomadTea", "SteppeFit", "UlaanStore", "SkyBakery", "AltanTech", "KhatanBeauty"])
+                  {["Park Lex 60 Dental", "Maui Nui Venison", "The Folklore Shop", "Park Lex 60 Dental", "Maui Nui Venison", "The Folklore Shop"]
+                    .concat(["Park Lex 60 Dental", "Maui Nui Venison", "The Folklore Shop", "Park Lex 60 Dental", "Maui Nui Venison", "The Folklore Shop"])
                     .map((name, i) => (
                       <div
                         key={i}
@@ -592,9 +592,9 @@ export default function Site() {
               viewport={{ once: true, margin: "-80px" }}
             >
               {[
-                { n: "Ariunaa, NomadTea", q: "They built us a predictable funnel in 3 weeks." },
-                { n: "Bilguun, SteppeFit", q: "Creative testing finally clicked. Costs dropped fast." },
-                { n: "Khaliun, KhatanBeauty", q: "The landing refresh doubled our conversion rate." },
+                { n: "Park Lex 60 Dental - Dr. Stephanie Dumanian", q: "Scaledy агентлагтай хамтран ажилласнаар бидний онлайн үйл ажиллагаа бүхэлдээ өөрчлөгдсөн. Тэдний тодорхой стратеги, бүтээлч гүйцэтгэл, тасралтгүй харилцаа нь алхам бүрт бидэнд итгэл төрүүлсэн. Бид тоон үзүүлэлтээр батлагдсан  өсөлтөө харсан бөгөөд бидний амжилтад өөрсдийнх юм шиг хөрөнгө оруулж байгаа хамтран ажиллагч байгууллагатай болсондоо баяртай байна." },
+                { n: "Maui Nui Venison - Jake Muise", q: "Эхнээсээ л багийнхан асар их эрч хүч, мэргэжлийн ур чадвараа бидний төсөлд зориулсан. Манай зорилгыг ойлгож, тэдгээрийг хэрэгжүүлж болохуйц үр дүн болгож чадсан нь үнэхээр гайхалтай. Аливаа campaign хүлээлтээс давж байсан бөгөөд урт хугацааны үнэ цэнийг бий болгоход чин сэтгэлээсээ ханддаг нь илт харагддаг." },
+                { n: "The Folklore Shop - Amira Rasool", q: "Энэ хамт олонтой ажилласнаар үнэхээр шинэхэн, таатай туршлагыг мэдэрлээ. Тэд мэргэжлийн ур чадвараа чин сэтгэлээсэй, хүсэл тэмүүлэлтэйгээ хослуулдаг бөгөөд энэ нь үр дүнд нь илт харагддаг. Тэдний санал, түргэн шуурхай байдал, бүтээлч байдал нь бидний бизнесийг төсөөлснөөс ч хурдан өсгөх боломжийг нээж өгсөн." },
               ].map((r, i) => (
                 <motion.div
                   key={i}
@@ -900,15 +900,15 @@ function faq(lang) {
   return [
     {
       q: lang === "en" ? "How fast can we launch?" : "Та бүхэнтэй хэрхэн харилцах вэ, тогтмол тайлан, дуудлага хийдэг үү?",
-      a: lang === "en" ? "Most brands launch within 7–10 days after audit and setup." : "Бид 14 хоног тутамд KPI тайлан илгээж, стратегийн дуудлага хийнэ. Өдөр тутмын асуулт, харилцааг dedicated менежер чат болон имэйлээр шуурхай зохицуулна",
+      a: lang === "en" ? "Most brands launch within 7–10 days after audit and setup." : "Бид 7 хоног тутамд KPI тайлан илгээж, стратегийн дуудлага хийдэг. Өдөр тутмын асуулт, лавлагаа чат болон имэйлээр шуурхай хариулна.",
     },
     {
-      q: lang === "en" ? "Do you need long-term contracts?" : "Хэрэв миний бизнес шинээр эхэлж байгаа бол та бүхэн ажиллах уу?",
-      a: lang === "en" ? "No. Month-to-month with clear KPIs." : "Тийм ээ. Шинээр эхэлж буй брэндүүдэд зориулсан Starter Growth багц бий. Энэ нь системийг зөв суурилуулж, эхний борлуулалтыг тогтвортой болгоход тусална.",
+      q: lang === "en" ? "Do you need long-term contracts?" : "Хэрэв манай бизнес шинээр эхэлж байгаа бол та бүхэн хамтран ажиллах уу?",
+      a: lang === "en" ? "No. Month-to-month with clear KPIs." : "Тийм ээ. Шинээр эхэлж буй брэндүүдэд зориулсан Starter Growth багц бий. Энэ нь зөв системийг эхнээс нь суурилуулж, борлуулалтыг тогтвортой болгоход тусална.",
     },
     {
       q: lang === "en" ? "Can you work with my existing creatives?" : "Бидний Facebook/Instagram account дээр шууд ажиллах уу, эсвэл шинэ account нээх үү?",
-      a: lang === "en" ? "Yes — we test your assets and supply new angles if needed." : "Хэрэв танай social account-ууд бэлэн бол бид шууд ажиллаж эхэлнэ. Хэрэв зарим тохиргоо дутуу байвал бид дутагдаж буй хэсгийг нөхөж, бүрэн бэлтгэсний дараа эхлүүлнэ",
+      a: lang === "en" ? "Yes — we test your assets and supply new angles if needed." : "Хэрэв танай social account-ууд бэлэн бол бид шууд ажиллаж эхэлнэ. Хэрэвээ дутуу байвал бид дутагдаж буй хэсгийг нөхөж, бүрэн бэлтгэсний дараа эхлүүлнэ",
     },
     {
       q: lang === "en" ? "Which industries do you support?" : "Монголын зах зээлд л чиглэдэг үү, эсвэл олон улсад зар явуулж болох уу?",
