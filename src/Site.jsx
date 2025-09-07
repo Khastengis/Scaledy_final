@@ -70,7 +70,7 @@ const OFFERING = {
         "6–8 flow: Худалдан авалтын дараах урсгал, Сэтгэгдэл, Winbacks, Хямдрал, Урамшуулал",
         "Advanced chatbot (Бүтээгдэхүүн хайлт, Дагалдах/нэмэлт санал өгөх)",
         "CRO: Landing/Checkout A/B тест (сар бүр 1–2 удаа)",
-        "2 долоо хоног болгон KPI тайлангийн дуудлага + Live dashboard",
+        "Долоо хоног болгон KPI тайлангийн дуудлага + Live dashboard",
       ],
       // promise: "Improve ROAS/MER by 30% within 90 days",
     },
@@ -122,7 +122,7 @@ const OFFERING = {
         "CRO: Landing/Checkout тест (сар бүр 1–2 удаа)",
         "⁠Email/SMS маркетинг: Сэтгэгдэл, Урамшуулал, Winbacks",
         "Advanced chatbot: Цаг товлох, Боломжит харилцагчийг тодорхойлох",
-        "⁠2 долоо хоног болгон гүйцэтгэлийн тайлан + Dashboard access",
+        "⁠Долоо хоног болгон гүйцэтгэлийн тайлан + Dashboard access",
       ],
       // promise: "Reduce CPL by 25% and increase bookings by 50% within 90 days",
     },
@@ -187,8 +187,8 @@ export default function Site() {
   const t = (obj) => obj[lang];
 
   const counters = [
-    { key: "brands", end: 20, suffix: "+", label: { en: "+ brands supported", mn: "+ брэнд хамтран ажилласан" } },
-    { key: "ad", end: 47000000, suffix: "+", label: { en: "$ managed ad/mo*", mn: "₮ зарын төсөв/сар*" } },
+    { key: "brands", end: 20, suffix: "+", label: { en: "+ brands supported", mn: "брэнд хамтран ажилласан" } },
+    { key: "ad", end: 510000000, suffix: "+", label: { en: "$ managed ad/mo*", mn: "үүсгэсэн орлого*" } },
     { key: "roas", end: 4.8, suffix: "", decimals: 1, label: { en: "avg. ROAS on scale*", mn: "дундаж ROAS*" } },
   ];
 
