@@ -25,12 +25,12 @@ const formatPrice = (amount, currency, USD_TO_MNT) => {
   if (amount == null) return "";
   if (typeof amount === "object" && amount.usd != null) {
     return currency === "USD"
-      ? `$${amount.usd.toLocaleString()} USD / mo`
-      : `₮${Math.round(amount.usd * USD_TO_MNT).toLocaleString()} MNT / mo`;
+      ? `${amount.usd.toLocaleString()}$ / mo`
+      : `${Math.round(amount.usd * USD_TO_MNT).toLocaleString()}₮ / сард`;
   }
   return currency === "USD"
-    ? `$${Math.round(amount / USD_TO_MNT).toLocaleString()} USD / mo`
-    : `₮${amount.toLocaleString()} MNT / mo`;
+    ? `${Math.round(amount / USD_TO_MNT).toLocaleString()}$ / mo`
+    : `${amount.toLocaleString()}₮ / сард`;
 };
 
 const OFFER_TRACKS = [
@@ -591,9 +591,9 @@ export default function Site() {
               viewport={{ once: true, margin: "-80px" }}
             >
               {[
-                { n: "Park Lex 60 Dental - Dr. Stephanie Dumanian", q: "Scaledy агентлагтай хамтран ажилласнаар бидний онлайн үйл ажиллагаа бүхэлдээ өөрчлөгдсөн. Тэдний тодорхой стратеги, бүтээлч гүйцэтгэл, тасралтгүй харилцаа нь алхам бүрт бидэнд итгэл төрүүлсэн. Бид тоон үзүүлэлтээр батлагдсан  өсөлтөө харсан бөгөөд бидний амжилтад өөрсдийнх юм шиг хөрөнгө оруулж байгаа хамтран ажиллагч байгууллагатай болсондоо баяртай байна." },
-                { n: "Maui Nui Venison - Jake Muise", q: "Эхнээсээ л багийнхан асар их эрч хүч, мэргэжлийн ур чадвараа бидний төсөлд зориулсан. Манай зорилгыг ойлгож, тэдгээрийг хэрэгжүүлж болохуйц үр дүн болгож чадсан нь үнэхээр гайхалтай. Аливаа campaign хүлээлтээс давж байсан бөгөөд урт хугацааны үнэ цэнийг бий болгоход чин сэтгэлээсээ ханддаг нь илт харагддаг." },
-                { n: "The Folklore Shop - Amira Rasool", q: "Энэ хамт олонтой ажилласнаар үнэхээр шинэхэн, таатай туршлагыг мэдэрлээ. Тэд мэргэжлийн ур чадвараа чин сэтгэлээсэй, хүсэл тэмүүлэлтэйгээ хослуулдаг бөгөөд энэ нь үр дүнд нь илт харагддаг. Тэдний санал, түргэн шуурхай байдал, бүтээлч байдал нь бидний бизнесийг төсөөлснөөс ч хурдан өсгөх боломжийг нээж өгсөн." },
+                { n: "Park Lex 60 Dental - Dr. Stephanie Dumanian", q: "Partnering with scaledy transformed the way we operate online. Their clear strategies, creative execution, and constant communication gave us confidence at every step. We’ve seen measurable growth and feel like we finally have a partner who is as invested in our success as we are." },
+                { n: "Maui Nui Venison - Jake Muise", q: "From the very beginning, the team brought energy and expertise to our project. Their ability to understand our goals and translate them into actionable results was impressive. Every campaign exceeded expectations, and it’s clear they truly care about delivering long-term value." },
+                { n: "The Folklore Shop - Amira Rasool", q: "Working with this group has been a refreshing experience. They combine professionalism with a genuine passion for what they do, and it shows in the results. Their insights, responsiveness, and creativity have positioned our business for growth we didn’t think possible this quickly." },
               ].map((r, i) => (
                 <motion.div
                   key={i}
